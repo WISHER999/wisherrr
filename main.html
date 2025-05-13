@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>✨ Sigma's Chore Wish System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #1e1e2f;
+      color: #f8f8f8;
+      text-align: center;
+      padding: 40px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      border: none;
+      background: #6200ee;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #3700b3;
+    }
+
+    .stats, .log {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .log {
+      background: #2a2a3f;
+      padding: 15px;
+      border-radius: 8px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .log-entry {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>WISHERBOT</h1>
+
+  <div>
+    <p id="chore">🌀 Click "New Chore" to begin!</p>
+    <button onclick="generateChore()">🎲 New Chore</button>
+    <button onclick="completeChore()">✅ Complete</button>
+    <button onclick="makeWish()">💫 Make a Wish</button>
+    <button onclick="saveProgress()">💾 Save</button>
+    <button onclick="loadProgress()">📂 Load</button>
+    <button onclick="resetProgress()">♻️ Reset</button>
+  </div>
+
+  <div class="stats">
+    <p><strong>Points:</strong> <span id="points">0</span></p>
+    <p><strong>Wishes:</strong> <span id="wishes">50</span></p>
+  </div>
+
+  <div class="log">
+    <p><strong>📝 Chore Log:</strong></p>
+    <div id="logEntries"></div>
+  </div>
+
+  <script>
+    const chores = [
+      "Do the dishes",
+      "Vacuum the floor",
+      "Take out the trash",
+      "Clean laibas room",
+      "CLEAN ASIMS ROOM",
+      "Water the plants",
+      "Wipe the table",
